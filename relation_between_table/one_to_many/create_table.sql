@@ -14,8 +14,12 @@ CREATE TABLE orders(
     order_date DATE,
     amount DECIMAL(8,2),
     customer_id INT,
-    FOREIGN KEY (customer_id) REFERENCES customers(id)
+    FOREIGN KEY (customer_id) 
+        REFERENCES customers(id)
+        ON DELETE CASCADE # => what this do is that when customers table delteded delete the order as well
 );
+
+# FOREIGN KEY (key_parameter_column) REFERENCES table(key_parameter_column)
 
 # FOREIGN KEY makes the selected parameter as the foreign key that relate that table with other table in which the column_parameter for the REFERENCES and inside  the brackets is the key chosen that serve as the foreign key in this case (id)
 
