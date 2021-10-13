@@ -9,7 +9,7 @@ CREATE TABLE students(
 CREATE TABLE papers(
     id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(100),
-    grade DECIMAL(5,2),
+    grade DECIMAL(3,2),
     student_id INT,
     FOREIGN KEY (student_id)
         REFERENCES students(id)
